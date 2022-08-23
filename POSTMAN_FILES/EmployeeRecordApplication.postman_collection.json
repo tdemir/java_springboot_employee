@@ -1,0 +1,359 @@
+{
+	"info": {
+		"_postman_id": "bba91262-73b9-4b2d-971c-75729718aaed",
+		"name": "EmployeeRecordApplication",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Department",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/departments",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/departments/2",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"departments",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insert",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"test department\",\r\n    \"officeAddress\":\"office test address\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/departments",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 3,\r\n    \"name\":\"test department 2\",\r\n    \"officeAddress\":\"office test address\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/departments",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/departments/3",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"departments",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Employee",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/employees",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"employees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/employees/2",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"employees",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByStartedDateAndSalary",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/employees/getByStartedDateAndSalary?startDate=2022-06-15&salary=1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"employees",
+								"getByStartedDateAndSalary"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2022-06-15"
+								},
+								{
+									"key": "salary",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insert",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"departmentId\": 2,\r\n    \"fullName\":\"test employee\",\r\n    \"startDate\": \"2020-01-15\",\r\n    \"salary\": 1299\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/employees",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"employees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insert -invalid",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"departmentId\": 2,\r\n    \"fullName\":\"\",\r\n    \"startDate\": \"2020-01-15\",\r\n    \"salary\": -5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/employees",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"employees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 3,\r\n    \"departmentId\": 2,\r\n    \"fullName\":\"test employee 2\",\r\n    \"startDate\": \"2020-01-15\",\r\n    \"salary\": 1299\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/employees",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"employees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update -invalid",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 0,\r\n    \"departmentId\": 2,\r\n    \"fullName\":\"test employee 2\",\r\n    \"startDate\": \"2020-01-15\",\r\n    \"salary\": 1299\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/employees",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"employees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/employees/3",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"employees",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Award",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/awards",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"awards"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getEmployeeOfTheMonth",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/awards/getEmployeeOfTheMonth?year=2022&month=10",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"awards",
+								"getEmployeeOfTheMonth"
+							],
+							"query": [
+								{
+									"key": "year",
+									"value": "2022"
+								},
+								{
+									"key": "month",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
